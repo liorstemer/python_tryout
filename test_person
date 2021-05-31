@@ -1,0 +1,21 @@
+import unittest
+import person
+from person import Person
+
+class TestPerson(unittest.TestCase):
+    def test_sum(self):
+        self.assertEqual(sum([1, 2, 3]), 6, "Should be 6")
+        
+    def test_sum_tuple(self):
+        self.assertEqual(sum((1, 2, 2)), 6, "Should be 6")
+
+    def test_name(self):
+        p1 = Person("John", 36)
+        self.assertEqual("John", p1.name)
+
+    def test_age(self):
+        p1 = Person("John", 36)
+        self.assertEqual(p1.age, 36)
+        
+if __name__ == '__main__':
+    unittest.main()
